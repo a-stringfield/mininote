@@ -1,8 +1,9 @@
 from mongoengine import *
 
-#class User(Document):
-#    username = StringField(required=True)
-#    password = StringField(required=True)
+class User(Document):
+    username = StringField(required=True)
+    password_hash = StringField(required=True)
+    register_date = DateTimeField(required=True)
 
 
 class Note(Document):
@@ -10,6 +11,7 @@ class Note(Document):
     body = StringField()
     creation_time = DateTimeField(required=True)
     modification_time = DateTimeField(required=True)
+    author = ReferenceField(User)
 
     @queryset_manager
     def objects(doc_cls, queryset):
