@@ -6,8 +6,6 @@ Mininote
 
 For using Mininote you should start MongoDB instance.
 
-You can try Mininote on test server: 188.226.229.15:5000
-
 
 #API Reference
 
