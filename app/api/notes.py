@@ -72,6 +72,11 @@ def make_note():
     except:
         abort(400)
 
+    if len(subject) > 100:
+        abort(413)
+    if len(body) > 3000:
+        abort(413)
+
     if len(subject) == 0:
         subject = 'New note'
 

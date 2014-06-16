@@ -3,7 +3,7 @@ from app.api import api_requests
 
 
 @api_requests.errorhandler(400)
-def page_not_found(e):
+def bad_request(e):
     return jsonify({
         'success': False,
         'message': 'Error 400: Bad request.',
@@ -12,7 +12,7 @@ def page_not_found(e):
 
 
 @api_requests.errorhandler(401)
-def page_not_found(e):
+def not_authorized(e):
     return jsonify({
         'success': False,
         'message': 'Error 401: You must be authorized.',
@@ -29,8 +29,17 @@ def page_not_found(e):
         }), 404
 
 
+@api_requests.errorhandler(413)
+def too_long(e):
+    return jsonify({
+        'success': False,
+        'message': 'Error 413: One of request fields is too long.',
+        'data': None
+        }), 413
+
+
 @api_requests.errorhandler(418)
-def page_not_found(e):
+def teapot(e):
     return jsonify({
         'success': False,
         'message': 'Error 418: I am a teapot.',

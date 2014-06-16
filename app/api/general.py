@@ -10,7 +10,7 @@ def get_info():
     "version": "0.2 pre-alfa",
     "license": "MIT License (MIT)",
     "author": "A. Stringfield",
-    "API Reference": "https://github.com/a-stringfield/mininote",
+    "api_reference": "https://github.com/a-stringfield/mininote",
     }
 
     return jsonify({
